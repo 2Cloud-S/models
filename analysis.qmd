@@ -6,11 +6,14 @@ execute:
 ---
 
 Voting preferences vary across demographic groups and are shaped by complex social factors. Using data from a March 2024 survey of 1,559 respondents, we examine what proportion of votes will be cast for Joe Biden in the 2024 U.S. presidential election.
-
+However, our estimate may be biased because the survey respondents might not be fully representative of the actual voting population in November.
+We model voter support for Joe Biden, measured as a binary outcome (support or not), as a logistic function of a single intercept term with no covariates.
 
 ```{r setup}
 #| message: false
+library(tidymodels)
 library (tidyverse)
+library(broom)
 
 poll_data <- tibble(biden = as.factor(c(rep("Yes", 655), 
                                         rep("No", 904)))) |> 
@@ -18,4 +21,52 @@ poll_data <- tibble(biden = as.factor(c(rep("Yes", 655),
 
 ```
 
+$$
+\log\left(\frac{\hat{p}}{1 - \hat{p}}\right) = -0.32
+$$
 
+$$
+\hat{p} = \frac{1}{1 + e^{-(-0.32)}} \approx 0.42
+$$
+
+```{r}
+#| cache: true
+
+
+fit_biden <- logistic_reg() |> 
+  fit(biden ~ 1, data = poll_data)
+
+```
+
+
+```{r}
+#| cache: true
+
+library(broom)
+library(gt)
+
+# Tidy model output and create formatted table
+tidy(fit_biden, conf.int = TRUE) |>
+  select(term, estimate, conf.low, conf.high) |>
+  mutate(
+    estimate = round(estimate, 3),
+    conf.low = round(conf.low, 3),
+    conf.high = round(conf.high, 3)
+  ) |>
+  gt() |>
+  cols_label(
+    term = "Term",
+    estimate = "Estimate",
+    conf.low = "95% CI (Lower)",
+    conf.high = "95% CI (Upper)"
+  ) |>
+  tab_header(
+    title = "Estimated Support for Joe Biden (Intercept-Only Model)"
+  ) |>
+  tab_source_note(
+    source_note = "Source: YouGov Poll, March 10–12, 2024"
+  ) |>
+  tab_caption(
+    caption = "This logistic regression model estimates the log-odds of support for Joe Biden based on survey responses."
+  )
+```
