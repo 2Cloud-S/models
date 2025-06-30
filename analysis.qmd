@@ -5,45 +5,60 @@ execute:
   echo: false
 ---
 
-Voting preferences vary across demographic groups and are shaped by complex social factors. Using data from a March 2024 survey of 1,559 respondents, we examine what proportion of votes will be cast for Joe Biden in the 2024 U.S. presidential election.
-However, our estimate may be biased because the survey respondents might not be fully representative of the actual voting population in November.
-We model voter support for Joe Biden, measured as a binary outcome (support or not), as a logistic function of a single intercept term with no covariates.
-
 ```{r setup}
 #| message: false
+#| cache: true
 library(tidymodels)
-library (tidyverse)
+library(tidyverse)
 library(broom)
+library(marginaleffects)
+library(gt)
+library(dplyr)
+library(ggplot2)
 
 poll_data <- tibble(biden = as.factor(c(rep("Yes", 655), 
                                         rep("No", 904)))) |> 
                 slice_sample(prop = 1)
-
 ```
-
-$$
-\log\left(\frac{\hat{p}}{1 - \hat{p}}\right) = -0.32
-$$
-
-$$
-\hat{p} = \frac{1}{1 + e^{-(-0.32)}} \approx 0.42
-$$
 
 ```{r}
 #| cache: true
-
-
 fit_biden <- logistic_reg() |> 
   fit(biden ~ 1, data = poll_data)
-
 ```
-
 
 ```{r}
 #| cache: true
 
-library(broom)
-library(gt)
+# Generate average predicted probabilities
+avg_predictions(fit_biden, type = "prob") |>
+  filter(group == "Yes") |>
+  ggplot(aes(x = estimate, y = "Support for Biden")) +
+  geom_pointrange(aes(xmin = conf.low, xmax = conf.high), size = 1.2) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(
+    title = "Support for President Biden in March 2024",
+    subtitle = "42% is not a good sign for an incumbent seeking reelection",
+    caption = "Source: YouGov poll, March 2024.",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.caption = element_text(hjust = 1)
+  )
+```
+
+---
+
+**Public opinion polls provide crucial but imperfect snapshots of voter sentiment during campaigns. Using data from a March 2024 survey of 1,559 respondents, we examine what proportion of votes will be cast for Joe Biden in the 2024 U.S. presidential election. However, our estimate may be biased because the survey respondents might not be fully representative of the actual voting population in November. We model voter support for Joe Biden, measured as a binary outcome (support or not), as a logistic function of a single intercept term with no covariates. We estimate that 42% of voters would support Joe Biden, with a 95% confidence interval ranging from 40% to 45%, based on March 2024 survey data.**
+
+---
+
+```{r}
+#| cache: true
 
 # Tidy model output and create formatted table
 tidy(fit_biden, conf.int = TRUE) |>
@@ -70,3 +85,13 @@ tidy(fit_biden, conf.int = TRUE) |>
     caption = "This logistic regression model estimates the log-odds of support for Joe Biden based on survey responses."
   )
 ```
+
+---
+
+$$
+\log\left(\frac{\hat{p}}{1 - \hat{p}}\right) = -0.32
+$$
+
+$$
+\hat{p} = \frac{1}{1 + e^{-(-0.32)}} \approx 0.42
+$$

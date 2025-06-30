@@ -92,32 +92,37 @@ window.Quarto = {
 </header>
 
 
-<p>Voting preferences vary across demographic groups and are shaped by complex social factors. Using data from a March 2024 survey of 1,559 respondents, we examine what proportion of votes will be cast for Joe Biden in the 2024 U.S. presidential election. However, our estimate may be biased because the survey respondents might not be fully representative of the actual voting population in November.</p>
-<p><span class="math display">\[
-\log\left(\frac{\hat{p}}{1 - \hat{p}}\right) = -0.32
-\]</span></p>
-<p><span class="math display">\[
-\hat{p} = \frac{1}{1 + e^{-(-0.32)}} \approx 0.42
-\]</span></p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="bcnllrzetr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bcnllrzetr table {
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+<p><strong>Public opinion polls provide crucial but imperfect snapshots of voter sentiment during campaigns. Using data from a March 2024 survey of 1,559 respondents, we examine what proportion of votes will be cast for Joe Biden in the 2024 U.S. presidential election. However, our estimate may be biased because the survey respondents might not be fully representative of the actual voting population in November. We model voter support for Joe Biden, measured as a binary outcome (support or not), as a logistic function of a single intercept term with no covariates. We estimate that 42% of voters would support Joe Biden, with a 95% confidence interval ranging from 40% to 45%, based on March 2024 survey data.</strong></p>
+<hr>
+<div class="cell">
+<div class="cell-output-display">
+<div id="idkwouyygg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#idkwouyygg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bcnllrzetr thead, #bcnllrzetr tbody, #bcnllrzetr tfoot, #bcnllrzetr tr, #bcnllrzetr td, #bcnllrzetr th {
+#idkwouyygg thead, #idkwouyygg tbody, #idkwouyygg tfoot, #idkwouyygg tr, #idkwouyygg td, #idkwouyygg th {
   border-style: none;
 }
 
-#bcnllrzetr p {
+#idkwouyygg p {
   margin: 0;
   padding: 0;
 }
 
-#bcnllrzetr .gt_table {
+#idkwouyygg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -143,12 +148,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_caption {
+#idkwouyygg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bcnllrzetr .gt_title {
+#idkwouyygg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -160,7 +165,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#bcnllrzetr .gt_subtitle {
+#idkwouyygg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -172,7 +177,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#bcnllrzetr .gt_heading {
+#idkwouyygg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -184,13 +189,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_bottom_border {
+#idkwouyygg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_col_headings {
+#idkwouyygg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -205,7 +210,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_col_heading {
+#idkwouyygg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -225,7 +230,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#bcnllrzetr .gt_column_spanner_outer {
+#idkwouyygg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -237,15 +242,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#bcnllrzetr .gt_column_spanner_outer:first-child {
+#idkwouyygg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bcnllrzetr .gt_column_spanner_outer:last-child {
+#idkwouyygg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bcnllrzetr .gt_column_spanner {
+#idkwouyygg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -257,11 +262,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#bcnllrzetr .gt_spanner_row {
+#idkwouyygg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bcnllrzetr .gt_group_heading {
+#idkwouyygg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -287,7 +292,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#bcnllrzetr .gt_empty_group_heading {
+#idkwouyygg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -302,15 +307,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#bcnllrzetr .gt_from_md > :first-child {
+#idkwouyygg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bcnllrzetr .gt_from_md > :last-child {
+#idkwouyygg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bcnllrzetr .gt_row {
+#idkwouyygg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -329,7 +334,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#bcnllrzetr .gt_stub {
+#idkwouyygg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -342,7 +347,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#bcnllrzetr .gt_stub_row_group {
+#idkwouyygg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -356,15 +361,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#bcnllrzetr .gt_row_group_first td {
+#idkwouyygg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bcnllrzetr .gt_row_group_first th {
+#idkwouyygg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bcnllrzetr .gt_summary_row {
+#idkwouyygg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -374,16 +379,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#bcnllrzetr .gt_first_summary_row {
+#idkwouyygg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_first_summary_row.thick {
+#idkwouyygg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bcnllrzetr .gt_last_summary_row {
+#idkwouyygg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -393,7 +398,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_grand_summary_row {
+#idkwouyygg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -403,7 +408,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#bcnllrzetr .gt_first_grand_summary_row {
+#idkwouyygg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -413,7 +418,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_last_grand_summary_row_top {
+#idkwouyygg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -423,11 +428,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_striped {
+#idkwouyygg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bcnllrzetr .gt_table_body {
+#idkwouyygg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -436,7 +441,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_footnotes {
+#idkwouyygg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -450,7 +455,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_footnote {
+#idkwouyygg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -459,7 +464,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#bcnllrzetr .gt_sourcenotes {
+#idkwouyygg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -473,7 +478,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#bcnllrzetr .gt_sourcenote {
+#idkwouyygg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -481,72 +486,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#bcnllrzetr .gt_left {
+#idkwouyygg .gt_left {
   text-align: left;
 }
 
-#bcnllrzetr .gt_center {
+#idkwouyygg .gt_center {
   text-align: center;
 }
 
-#bcnllrzetr .gt_right {
+#idkwouyygg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bcnllrzetr .gt_font_normal {
+#idkwouyygg .gt_font_normal {
   font-weight: normal;
 }
 
-#bcnllrzetr .gt_font_bold {
+#idkwouyygg .gt_font_bold {
   font-weight: bold;
 }
 
-#bcnllrzetr .gt_font_italic {
+#idkwouyygg .gt_font_italic {
   font-style: italic;
 }
 
-#bcnllrzetr .gt_super {
+#idkwouyygg .gt_super {
   font-size: 65%;
 }
 
-#bcnllrzetr .gt_footnote_marks {
+#idkwouyygg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bcnllrzetr .gt_asterisk {
+#idkwouyygg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bcnllrzetr .gt_indent_1 {
+#idkwouyygg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bcnllrzetr .gt_indent_2 {
+#idkwouyygg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bcnllrzetr .gt_indent_3 {
+#idkwouyygg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bcnllrzetr .gt_indent_4 {
+#idkwouyygg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bcnllrzetr .gt_indent_5 {
+#idkwouyygg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bcnllrzetr .katex-display {
+#idkwouyygg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bcnllrzetr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#idkwouyygg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -582,6 +587,13 @@ window.Quarto = {
 </div>
 </div>
 </div>
+<hr>
+<p><span class="math display">\[
+\log\left(\frac{\hat{p}}{1 - \hat{p}}\right) = -0.32
+\]</span></p>
+<p><span class="math display">\[
+\hat{p} = \frac{1}{1 + e^{-(-0.32)}} \approx 0.42
+\]</span></p>
 
 </main>
 <!-- /main column -->
