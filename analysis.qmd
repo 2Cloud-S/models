@@ -1,0 +1,21 @@
+---
+title: "Biden Polling"
+format: html
+execute: 
+  echo: false
+---
+
+Voting preferences vary across demographic groups and are shaped by complex social factors. Using data from a March 2024 survey of 1,559 respondents, we examine what proportion of votes will be cast for Joe Biden in the 2024 U.S. presidential election.
+
+
+```{r setup}
+#| message: false
+library (tidyverse)
+
+poll_data <- tibble(biden = as.factor(c(rep("Yes", 655), 
+                                        rep("No", 904)))) |> 
+                slice_sample(prop = 1)
+
+```
+
+
