@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Biden Polling",
+    "section": "",
+    "text": "Public opinion polls provide crucial but imperfect snapshots of voter sentiment during campaigns. Using data from a March 2024 survey of 1,559 respondents, we examine what proportion of votes will be cast for Joe Biden in the 2024 U.S. presidential election. However, our estimate may be biased because the survey respondents might not be fully representative of the actual voting population in November. We model voter support for Joe Biden, measured as a binary outcome (support or not), as a logistic function of a single intercept term with no covariates. We estimate that 42% of voters would support Joe Biden, with a 95% confidence interval ranging from 40% to 45%, based on March 2024 survey data.\n\n\n\n\n\n\n\nThis logistic regression model estimates the log-odds of support for Joe Biden based on survey responses.\n\n\nEstimated Support for Joe Biden (Intercept-Only Model)\n\n\nTerm\nEstimate\n95% CI (Lower)\n95% CI (Upper)\n\n\n\n\n(Intercept)\n-0.322\n-0.423\n-0.222\n\n\n\nSource: YouGov Poll, March 10–12, 2024\n\n\n\n\n\n\n\n\n\n\\[\n\\log\\left(\\frac{\\hat{p}}{1 - \\hat{p}}\\right) = -0.32\n\\]\n\\[\n\\hat{p} = \\frac{1}{1 + e^{-(-0.32)}} \\approx 0.42\n\\]"
+  },
+  {
+    "objectID": "models.html",
+    "href": "models.html",
+    "title": "models",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "models.html#quarto",
+    "href": "models.html#quarto",
+    "title": "models",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  }
+]
